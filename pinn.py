@@ -111,7 +111,9 @@ for epoch in range(ADAM_EPOCH+1):
         err_sigma = abs(pinn.sigma_pred.item() - SIGMA_TRUE) / SIGMA_TRUE * 100
         print(f"Adam эпоха : {epoch:4d} | Loss: {loss.item():.6f} | Ошибка Theta: {err_theta:.2f}%, Ошибка Mu: {err_mu:.4f}%, Ошибка Sigma: {err_sigma:.4f}%")
 
-
+print("\n--- Конец обучения ---")
+print("\nИтоговые значения:")
+print(f"Эпоха : {epoch:4d} | Loss: {loss.item():.6f} |  Theta: {pinn.theta_pred.item():.4f},  Mu: {pinn.mu_pred.item():.4f}, Sigma: {pinn.sigma_pred.item():.4f}")
 
 # картинки
 
